@@ -34,10 +34,10 @@ apps:
     command: bash
     plugs:
        - desktop
-      #      - desktop-legacy
-      #      - gsettings
-      - network
-      - x11
+       - desktop-legacy
+       - gsettings
+       - network
+       - x11
       
 parts:
   magic:
