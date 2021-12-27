@@ -55,7 +55,7 @@ parts:
       - CMAKE_INCLUDE_PATH: $CMAKE_INCLUDE_PATH:$SNAPCRAFT_STAGE/include:$SNAPCRAFT_STAGE/usr/include
       - CMAKE_LIBRARY_PATH: $CMAKE_LIBRARY_PATH:$SNAPCRAFT_STAGE/lib:$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
  
-pantheon-desktop:
+  pantheon-desktop:
     plugin: 
     source: https://github.com/elementary/session-settings.git
     source-type: git
@@ -74,7 +74,7 @@ pantheon-desktop:
     build-packages:
       - git
       - sed
-gtk:
+  gtk:
     after: [glib, cairo, epoxy, pango, gobject-introspection, gdk-pixbuf, json-glib, atk, at-spi2-atk]
     source: https://gitlab.gnome.org/GNOME/gtk.git
     source-branch: gtk-3-24
@@ -124,7 +124,7 @@ gtk:
       - librest-dev
       - xvfb
 
-at-spi2-core:
+  at-spi2-core:
     after: [glib, gobject-introspection]
     source: https://gitlab.gnome.org/GNOME/at-spi2-core.git
     source-tag: AT_SPI2_CORE_2_28_0
@@ -148,7 +148,7 @@ at-spi2-core:
       - libxkbcommon-dev
       - libxtst-dev
 
-at-spi2-atk:
+  at-spi2-atk:
     after: [glib, at-spi2-core, atk]
     source: https://gitlab.gnome.org/GNOME/at-spi2-atk.git
     source-branch: gnome-3-26 # there is no gnome-3-28 branch yet
@@ -172,7 +172,7 @@ at-spi2-atk:
       - libxml2-dev
       - libx11-dev
 
-atk:
+  atk:
     after: [glib]
     source: https://gitlab.gnome.org/GNOME/atk.git
     source-branch: gnome-3-28
@@ -191,7 +191,7 @@ atk:
       sed -i 's#libdir=#libdir=$SNAPCRAFT_STAGE#' $DST
       sed -i 's#includedir=#includedir=$SNAPCRAFT_STAGE#' $DST
 
-json-glib:
+  json-glib:
     after: [glib]
     source: https://gitlab.gnome.org/GNOME/json-glib.git
     source-branch: json-glib-1-4
@@ -199,7 +199,7 @@ json-glib:
     meson-parameters: [ --prefix=/usr ]
     build-environment: *buildenv
 
-pango:
+  pango:
     after: [glib, cairo, harfbuzz]
     source: https://gitlab.gnome.org/GNOME/pango.git
     #source-tag: '1.42.0'
@@ -230,7 +230,7 @@ pango:
         sed -i 's#includedir=#includedir=$SNAPCRAFT_STAGE#' $DST
       done
 
-harfbuzz:
+  harfbuzz:
     after: [glib, cairo, gobject-introspection]
     source: git://anongit.freedesktop.org/git/harfbuzz
     source-tag: '1.7.6'
@@ -258,7 +258,7 @@ harfbuzz:
       sed -i 's#libdir=#libdir=$SNAPCRAFT_STAGE#' $DST
       sed -i 's#includedir=#includedir=$SNAPCRAFT_STAGE#' $DST
 
-gdk-pixbuf:
+  gdk-pixbuf:
     after: [glib, gobject-introspection]
     source: https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
     source-tag: 2.38.0 # there is no gdk-pixbuf-2-38 branch yet
@@ -282,7 +282,7 @@ gdk-pixbuf:
       - libjpeg-dev
       - libtiff-dev
 
-gobject-introspection:
+  gobject-introspection:
     after: [glib, cairo]
     source: https://gitlab.gnome.org/GNOME/gobject-introspection.git
     #source-branch: gnome-3-28
@@ -311,7 +311,7 @@ gobject-introspection:
       - bison
       - flex
 
-cairo:
+  cairo:
     after: [glib]
     source: git://anongit.freedesktop.org/git/cairo
     source-branch: '1.14'
@@ -360,7 +360,7 @@ cairo:
       - zlib1g-dev
       - liblzo2-dev
 
-epoxy:
+  epoxy:
     after: [glib]
     source: https://github.com/anholt/libepoxy.git
     plugin: meson
@@ -383,7 +383,7 @@ epoxy:
       - libgl1-mesa-dev
       - libegl1-mesa-dev
 
-glib:
+  glib:
     source: https://gitlab.gnome.org/GNOME/glib.git
     source-branch: glib-2-58
     configflags: [ --prefix=/usr ]
@@ -407,7 +407,7 @@ glib:
       - libtool
       - libmount-dev
 
-desktop-gnome-platform:
+  desktop-gnome-platform:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-subdir: gtk
     plugin: make
