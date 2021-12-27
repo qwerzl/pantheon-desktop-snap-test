@@ -1,5 +1,5 @@
 name: pantheon-desktop
-version: 5.0
+version: git
 summary: Pantheon Desktop Environment. 
 description: a GTK desktop based on the GNOME software base.
   
