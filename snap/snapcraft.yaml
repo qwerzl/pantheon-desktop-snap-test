@@ -56,7 +56,7 @@ parts:
       - CMAKE_LIBRARY_PATH: $CMAKE_LIBRARY_PATH:$SNAPCRAFT_STAGE/lib:$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
  
   pantheon-desktop:
-    plugin: 
+    # plugin: 
     source: https://github.com/elementary/session-settings.git
     source-type: git
     override-pull: |
