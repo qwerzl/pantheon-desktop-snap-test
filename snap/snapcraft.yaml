@@ -2,7 +2,7 @@ name: pantheon-desktop
 version: git
 summary: Pantheon Desktop Environment. 
 description: a GTK desktop based on the GNOME software base.
-base: bare
+base: core18
 adopt-info: devmode # use 'strict' once you have the right plugs and slots
 
 grade: stable
